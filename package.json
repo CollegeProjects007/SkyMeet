@@ -1,0 +1,23 @@
+{
+  "name": "skymeet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devStart": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
+    "socket.io": "^4.5.3",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  }
+}
