@@ -17,7 +17,7 @@ navigator.mediaDevices.getUserMedia({
   myPeer.on('call', call => {
     call.answer(stream)
     const video = document.createElement('video')
-    Video.classList.add("rounded")
+    video.classList.add("rounded")
     call.on('stream', userVideoStream => {
       addVideoStream(video, userVideoStream)
     })
