@@ -5,6 +5,7 @@ const myPeer = new Peer(undefined, {
   port: '3001'
 })
 const myVideo = document.createElement('video')
+myVideo.classList.add("rounded")
 myVideo.muted = true
 const peers = {}
 navigator.mediaDevices.getUserMedia({
@@ -16,6 +17,7 @@ navigator.mediaDevices.getUserMedia({
   myPeer.on('call', call => {
     call.answer(stream)
     const video = document.createElement('video')
+    Video.classList.add("rounded")
     call.on('stream', userVideoStream => {
       addVideoStream(video, userVideoStream)
     })
@@ -37,6 +39,8 @@ myPeer.on('open', id => {
 function connectToNewUser(userId, stream) {
   const call = myPeer.call(userId, stream)
   const video = document.createElement('video')
+  video.classList.add("rounded")
+
   call.on('stream', userVideoStream => {
     addVideoStream(video, userVideoStream)
   })
