@@ -3,6 +3,9 @@ const app = express()
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
 const { v4: uuidV4 } = require('uuid')
+const PORT = process.env.PORT || 3005;
+
+// your code
 
 const path = require('path');
 
@@ -12,7 +15,6 @@ app.set('views', path.join(__dirname, 'views'));
 // => Here we expose your dist folder
 app.use(express.static(path.join(__dirname, 'dist')))
 app.use(express.static(path.join(__dirname, 'public')))
-
 
 app.get('/', (req, res)=>{
     res.redirect('/home')
@@ -37,4 +39,7 @@ io.on('connection',socket =>{
     })
 })
 
-server.listen(3005)
+// server.listen(3005)
+server.listen(PORT, () => {
+    console.log(`server started on port ${PORT}`);
+  });
