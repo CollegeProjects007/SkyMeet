@@ -1057,6 +1057,18 @@ video {
     height: 42.375rem;
   }
 
+  .sm\:h-1 {
+    height: 0.25rem;
+  }
+
+  .sm\:h-16 {
+    height: 4rem;
+  }
+
+  .sm\:h-24 {
+    height: 6rem;
+  }
+
   .sm\:justify-center {
     justify-content: center;
   }
