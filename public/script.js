@@ -5,10 +5,13 @@ const myVideo = document.createElement('video')
 myVideo.classList.add("rounded")
 myVideo.muted = true
 const peers = {}
+
 navigator.mediaDevices.getUserMedia({
   video: true,
   audio: true
 }).then(stream => {
+
+  myStream=stream;
   addVideoStream(myVideo, stream)
 
   myPeer.on('call', call => {
@@ -55,3 +58,36 @@ function addVideoStream(video, stream) {
   })
   videoGrid.append(video)
 }
+
+function muteMic() {
+  myStream.getAudioTracks().forEach(track => {
+    
+    track.enabled = !track.enabled;
+    
+    if(track.enabled){
+      document.getElementById("mic-btn").classList.remove("fa-microphone-slash");
+      document.getElementById("mic-btn").classList.add("fa-microphone");
+    }
+    else{
+      document.getElementById("mic-btn").classList.remove("fa-microphone");
+      document.getElementById("mic-btn").classList.add("fa-microphone-slash");
+    }
+  });
+}
+
+function muteCam() {
+  myStream.getVideoTracks().forEach(track => {
+    track.enabled = !track.enabled;
+    if(track.enabled){
+      document.getElementById("video-btn").classList.remove("fa-video-slash");
+      document.getElementById("video-btn").classList.add("fa-video");
+    }
+    else{
+      document.getElementById("video-btn").classList.remove("fa-video");
+      document.getElementById("video-btn").classList.add("fa-video-slash");
+    }
+  
+  });
+ 
+}
+
