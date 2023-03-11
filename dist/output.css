@@ -862,6 +862,10 @@ video {
   max-width: 20rem;
 }
 
+.max-w-sm {
+  max-width: 24rem;
+}
+
 .flex-shrink-0 {
   flex-shrink: 0;
 }
@@ -1394,6 +1398,14 @@ video {
     height: 6rem;
   }
 
+  .sm\:max-w-lg {
+    max-width: 32rem;
+  }
+
+  .sm\:max-w-sm {
+    max-width: 24rem;
+  }
+
   .sm\:justify-center {
     justify-content: center;
   }
@@ -1413,6 +1425,12 @@ video {
   .sm\:text-6xl {
     font-size: 3.75rem;
     line-height: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:max-w-lg {
+    max-width: 32rem;
   }
 }
 
